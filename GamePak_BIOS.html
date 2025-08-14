@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GamePak BIOS</title>
+<style>
+  body {
+    background: black;
+    color: limegreen;
+    font-family: monospace;
+    text-align: center;
+    margin-top: 15%;
+    font-size: 20px;
+  }
+  .blink {
+    animation: blink 1s steps(2, start) infinite;
+  }
+  @keyframes blink {
+    to { visibility: hidden; }
+  }
+</style>
+</head>
+<body>
+
+<h1>🕹️ GamePak BIOS v1.0</h1>
+<p>Initializing hardware...</p>
+<p id="loading">Loading modules...</p>
+<p class="blink">Press START</p>
+
+<script>
+let steps = [
+  "Checking memory...",
+  "Loading GamePak driver...",
+  "Verifying console type...",
+  "Ready!"
+];
+let index = 0;
+let loading = document.getElementById("loading");
+
+let biosSequence = setInterval(() => {
+  loading.textContent = steps[index];
+  index++;
+  if (index >= steps.length) {
+    clearInterval(biosSequence);
+  }
+}, 1500);
+</script>
+
+</body>
+</html>
