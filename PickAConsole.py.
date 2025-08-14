@@ -1,0 +1,31 @@
+for i, c in enumerate(CONSOLES):
+        slow_print(f" {i+1}. {c}", 0.005)
+
+    choice = None
+    while choice is None:
+        try:
+            sel = int(input("Select a console number: "))
+            if 1 <= sel <= len(CONSOLES):
+                choice = CONSOLES[sel-1]
+            else:
+                slow_print("Invalid choice. Try again.", 0.005)
+        except ValueError:
+            slow_print("Please enter a number.", 0.005)
+
+    name = input("Enter game pak name: ").strip() or "MyGamePak"
+    size_kb = random.choice([128, 256, 512, 1024])
+
+    slow_print(f"Creating '{name}' for {choice} ({size_kb}KB)...", 0.01)
+    progress(3.0)
+
+    filename, metadata, checksum = create_gamepak(name, choice, size_kb)
+    save_path = save_savefile(name, metadata)
+    readme_path = write_readme(filename, metadata, checksum)
+
+    slow_print(f"Done! Generated files in '{OUT_DIR}':", 0.01)
+    slow_print(f" - {filename}", 0.005)
+    slow_print(f" - {save_path}", 0.005)
+    slow_print(f" - {readme_path}", 0.005)
+
+if __name__ == "__main__":
+    main()
