@@ -1,0 +1,21 @@
+# MakeGamePak.py
+import time
+import random
+
+def make_game_pak():
+    print("Welcome to Make Game Pak Setup!")
+    while True:
+        choice = input("Choose console (Nintendo 64 / Ultra 64 / Nintendo DS): ").strip()
+        if choice.lower() in ["nintendo 64", "ultra 64", "nintendo ds"]:
+            confirm = input(f"You chose {choice}. Is this right? (yes/no): ").strip().lower()
+            if confirm == "yes":
+                break
+        print("Let's try again.\n")
+
+    print("\nLoading...")
+    time.sleep(random.uniform(0.5, 2.5))
+    print(f"{choice} Game Pak created successfully!")
+    print("Download complete.")
+
+if __name__ == "__main__":
+    make_game_pak()
