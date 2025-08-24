@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamePak System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #00ff41;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff41;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px #00ff41;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid #00ff41;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            background: rgba(0, 255, 65, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00ff41;
+        }
+        
+        .card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .features {
+            margin-top: 3rem;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #00ff41;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            background: rgba(0, 255, 65, 0.05);
+            padding: 1rem;
+            border-left: 3px solid #00ff41;
+            border-radius: 4px;
+        }
+        
+        .blink {
+            animation: blink 1s steps(2, start) infinite;
+        }
+        
+        @keyframes blink {
+            to { visibility: hidden; }
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕹️ GamePak System</h1>
+            <p>Create, manage, and connect retro gaming cartridges</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card" onclick="window.open('GamePak_BIOS.html', '_blank')">
+                <h3>🔧 BIOS Interface</h3>
+                <p>Access the GamePak BIOS system for hardware initialization and diagnostics. Features retro terminal styling with boot sequence simulation.</p>
+            </div>
+            
+            <div class="card" onclick="window.open('HelperAssiant.Advanced.html', '_blank')">
+                <h3>🤖 Helper Assistant</h3>
+                <p>Advanced AI assistant for GamePak troubleshooting, calculations, and web research. Includes voice support and step-by-step guidance.</p>
+            </div>
+            
+            <div class="card" onclick="alert('Run MakeGamePak.py to create new GamePaks')">
+                <h3>📦 GamePak Creator</h3>
+                <p>Create new GamePaks for Nintendo 64, Ultra 64, or Nintendo DS consoles. Interactive setup with console selection and confirmation.</p>
+            </div>
+            
+            <div class="card" onclick="alert('Run usb_gamepak_toggle.py to manage USB connections')">
+                <h3>🔌 USB Manager</h3>
+                <p>Connect and disconnect GamePaks via USB interface. Real-time monitoring of GamePak connection status with automatic detection.</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>System Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <strong>Multi-Console Support</strong><br>
+                    Nintendo 64, Ultra 64, and Nintendo DS compatibility
+                </div>
+                <div class="feature-item">
+                    <strong>USB Connectivity</strong><br>
+                    Real-time GamePak detection and management
+                </div>
+                <div class="feature-item">
+                    <strong>BIOS Simulation</strong><br>
+                    Authentic retro boot sequence experience
+                </div>
+                <div class="feature-item">
+                    <strong>AI Assistant</strong><br>
+                    Advanced troubleshooting and support system
+                </div>
+                <div class="feature-item">
+                    <strong>Save Management</strong><br>
+                    Automatic save file generation and metadata
+                </div>
+                <div class="feature-item">
+                    <strong>Checksum Verification</strong><br>
+                    Data integrity validation for GamePaks
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>GamePak System v1.0 | <span class="blink">READY</span></p>
+            <p>Check the README.md for setup instructions and tips</p>
+        </div>
+    </div>
+</body>
+</html>

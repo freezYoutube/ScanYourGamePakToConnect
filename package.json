@@ -1,0 +1,17 @@
+{
+  "name": "gamepak-system",
+  "version": "1.0.0",
+  "description": "A retro gaming console GamePak creation and management system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["gaming", "retro", "console", "gamepak", "nintendo"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}
